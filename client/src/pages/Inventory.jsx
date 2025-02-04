@@ -22,7 +22,7 @@ const InventoryPage = () => {
 
       // Check price filter
       if (priceFilter) {
-        const productPrice = parseFloat(car.price);
+        const productPrice = parseFloat(car.price.replace(/[^0-9.-]+/g, ""));
         matchesPrice = productPrice <= parseFloat(priceFilter);
       }
 
