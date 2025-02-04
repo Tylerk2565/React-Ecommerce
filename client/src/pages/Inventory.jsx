@@ -22,7 +22,7 @@ const InventoryPage = () => {
 
       // Check price filter
       if (priceFilter) {
-        const productPrice = parseFloat(car.price);
+        const productPrice = parseFloat(car.price.replace(/[^0-9.-]+/g, ""));
         matchesPrice = productPrice <= parseFloat(priceFilter);
       }
 
@@ -36,7 +36,6 @@ const InventoryPage = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      ``
       <div className="flex-grow">
         <div className="filter-container mt-22 flex flex-col md:flex-row md:justify-end items-center md:items-end mr-2 text-white space-y-2 md:space-y-0 md:space-x-4">
           <select
